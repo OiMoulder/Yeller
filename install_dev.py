@@ -1,18 +1,37 @@
 import click
 import subprocess
+import platform
 
 @click.command()
-@click.option('--os', type=click.Choice(['Windows', 'Linux'], case_sensitive=False),
-              default=None, help='Option for installing on Windows or Linux')
+@click.option('--os', type=click.Choice(['Windows', 'Ubuntu', 'RedHat', 'Red_Hat', 'Rocky'], case_sensitive=False),
+              default=None, help='Option for installing on Windows, Ubuntu, Red Hat, or Rocky')
 def installdev(os):
     """Setup local DevOps development environment"""
-    if os == 'Windows':
-        click.echo("You've chosen Windows!")
-    elif os == 'Linux':
-        script_path = '/path/to/your/script.sh'  # Replace with your actual script path
-        try:
-            subprocess.run(['bash', script_path], check=True)
-        except subprocess.CalledProcessError as e:
-            click.echo(f"Error running Bash script: {e}")
-    else:
-        click.echo("Please specify a valid operating system (Windows or Linux).")
+    try:
+        with open('/etc/os-release', 'r') as f:
+            os_info = {}
+            for line in f:
+                key, value = line.strip().split('=')
+                os_info[key.strip('"')] = value.strip('"')
+
+        if os == 'Windows' or (os is None and platform.system() == 'nt'):
+            # Command to execute on Windows
+            command = ['echo', 'Hello from Windows!']
+        elif os == 'Ubuntu' or (os is None and os_info.get('NAME') == 'Ubuntu'):
+            # Command to execute on Ubuntu
+            command = ['echo', 'Hello from Ubuntu!']
+        elif os == 'RedHat' or os == 'Red_Hat' or (os is None and os_info.get('NAME') in ['Red Hat Enterprise Linux']):
+            # Command to execute on Red Hat (or Rocky)
+            command = ['echo', 'Hello from Red Hat!']
+        elif os == 'Rocky' or (os is None and os_info.get('NAME') in ['Rocky']):
+            # Command to execute on Red Hat (or Rocky)
+            command = ['echo', 'Hello from Rocky Linux!']
+        else:
+            click.echo("Please specify a valid operating system (Windows, Ubuntu, RedHat, or Rocky)")
+            return
+
+        subprocess.run(command, check=True)
+    except FileNotFoundError:
+        click.echo("Cannot determine Linux distribution.")
+    except subprocess.CalledProcessError as e:
+        click.echo(f"Error running command: {e}")
