@@ -48,5 +48,9 @@ setup(
     scripts=[
         'hello.py',
         'install_dev.py',
+        'windows.ps1',
+        'ubuntu.sh',
+        'redhat.sh',
+        'rocky.sh',
     ],
 )
