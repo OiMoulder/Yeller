@@ -10,7 +10,7 @@ def repo_file_as_string(file_path: str) -> str:
         return repo_file.read()
 
 def get_version():
-    from version import yeller_version
+    from .version import yeller_version
     return yeller_version
 
 setup(
