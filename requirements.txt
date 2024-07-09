@@ -27,5 +27,5 @@ rich==13.7.1
 SecretStorage==3.3.3
 twine==5.1.1
 urllib3==2.2.2
-yeller==0.0.2
+yeller==0.0.5
 zipp==3.19.2
