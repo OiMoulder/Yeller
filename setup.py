@@ -8,10 +8,15 @@ from setuptools import setup
 def repo_file_as_string(file_path: str) -> str:
     with open(file_path, "r") as repo_file:
         return repo_file.read()
+    
+def get_version():
+    with open('version.py', 'r') as f:
+        exec(f.read(), globals())
+        return locals()['version']
 
 setup(
     name='yeller',
-    version='0.0.2',
+    version=get_version(),
     long_description=repo_file_as_string("README.md"),
     long_description_content_type="text/markdown",
     author="Josh Moulder",

@@ -6,6 +6,7 @@ Author:
 """
 
 import click
+from version import yeller_version
 from hello import hello  # Import the hello command
 from install_dev import installdev  # Import the installdev command
 
@@ -13,7 +14,7 @@ from install_dev import installdev  # Import the installdev command
 CONTEXT_SETTINGS = {"help_option_names": ["-h", "--help"]}
 
 # Version number
-version_num = "0.0.2"
+version_num = yeller_version
 
 # Define the main command group
 @click.group(context_settings=CONTEXT_SETTINGS)
