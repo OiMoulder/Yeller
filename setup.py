@@ -11,7 +11,7 @@ def repo_file_as_string(file_path: str) -> str:
 
 setup(
     name='yeller',
-    version='0.0.1',
+    version='0.0.2',
     long_description=repo_file_as_string("README.md"),
     long_description_content_type="text/markdown",
     author="Josh Moulder",
@@ -24,8 +24,7 @@ setup(
         "Intended Audience :: System Administrators",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 3.10"
-        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.10",
         "Topic :: Terminals",
         "Topic :: Utilities"
     ],
@@ -34,9 +33,16 @@ setup(
     install_requires=[
         'Click',
     ],
+    package_data={
+        '': ['README.md'],
+    },
     entry_points={
         'console_scripts': [
             'yeller=yeller:cli',
         ],
-    },  
+    },
+    scripts=[
+        'hello.py',
+        'install_dev.py',
+    ],
 )

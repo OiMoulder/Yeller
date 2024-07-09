@@ -13,7 +13,7 @@ from install_dev import installdev  # Import the installdev command
 CONTEXT_SETTINGS = {"help_option_names": ["-h", "--help"]}
 
 # Version number
-version_num = "0.0.1"
+version_num = "0.0.2"
 
 # Define the main command group
 @click.group(context_settings=CONTEXT_SETTINGS)
