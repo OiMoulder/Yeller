@@ -7,6 +7,7 @@ Author:
 
 import click
 from hello import hello  # Import the hello command
+from install_dev import installdev  # Import the installdev command
 
 # Set context settings for click
 CONTEXT_SETTINGS = {"help_option_names": ["-h", "--help"]}
@@ -23,6 +24,9 @@ def cli():
 
 # Add the hello command to the main command group
 cli.add_command(hello)
+
+# Add the installdev command to the main command group
+cli.add_command(installdev)
 
 if __name__ == '__main__':
     cli()
