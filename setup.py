@@ -4,15 +4,18 @@ Used for installing Yeller via pip.
 """
 
 from setuptools import setup
-from version import yeller_version
 
 def repo_file_as_string(file_path: str) -> str:
     with open(file_path, "r") as repo_file:
         return repo_file.read()
 
+def get_version():
+    from version import yeller_version
+    return yeller_version
+
 setup(
     name='yeller',
-    version=yeller_version,
+    version=get_version(),
     long_description=repo_file_as_string("README.md"),
     long_description_content_type="text/markdown",
     author="Josh Moulder",
