@@ -27,6 +27,6 @@ jobs:
         python -m pip install pytest
         pip install click
     - name: Setup Yeller
-      run: python3 setup.py install
-    - name: Test Yeller
-      run: yeller hello
+      run: |
+        python3 setup.py install
+        yeller hello
