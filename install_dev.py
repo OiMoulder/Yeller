@@ -16,7 +16,7 @@ def installdev(os):
 
         if os == 'Windows' or (os is None and platform.system() == 'nt'):
             # Command to execute on Windows
-            command = ['echo', 'Hello from Windows!']
+            command = ['https://github.com/OiMoulder/Yeller/blob/master/windows.ps1']
         elif os == 'Ubuntu' or (os is None and os_info.get('NAME') == 'Ubuntu'):
             # Command to execute on Ubuntu
             command = ['echo', 'Hello from Ubuntu!']
@@ -32,6 +32,6 @@ def installdev(os):
 
         subprocess.run(command, check=True)
     except FileNotFoundError:
-        click.echo("Cannot determine Linux distribution.")
+        click.echo("Cannot determine operating system.")
     except subprocess.CalledProcessError as e:
         click.echo(f"Error running command: {e}")
