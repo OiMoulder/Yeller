@@ -21,10 +21,10 @@ def installdev(os):
             # Command to execute on Ubuntu
             command = ['echo', 'Hello from Ubuntu!']
         elif os == 'RedHat' or os == 'Red_Hat' or (os is None and os_info.get('NAME') in ['Red Hat Enterprise Linux']):
-            # Command to execute on Red Hat (or Rocky)
+            # Command to execute on Red Hat
             command = ['echo', 'Hello from Red Hat!']
         elif os == 'Rocky' or (os is None and os_info.get('NAME') in ['Rocky']):
-            # Command to execute on Red Hat (or Rocky)
+            # Command to execute on Rocky
             command = ['echo', 'Hello from Rocky Linux!']
         else:
             click.echo("Please specify a valid operating system (Windows, Ubuntu, RedHat, or Rocky)")
