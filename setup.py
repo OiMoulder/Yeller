@@ -46,6 +46,7 @@ setup(
         ],
     },
     scripts=[
+        'version.py',
         'hello.py',
         'install_dev.py',
         'windows.ps1',

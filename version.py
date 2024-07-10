@@ -1,1 +1,1 @@
-yeller_version = "0.0.6"
+yeller_version = "0.0.7"
