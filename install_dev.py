@@ -14,9 +14,11 @@ def installdev(os):
                 key, value = line.strip().split('=')
                 os_info[key.strip('"')] = value.strip('"')
 
-        if os == 'Windows' or (os is None and platform.system() == 'nt'):
+        if os == 'Windows' or (os is None and platform.system() == 'Windows'):
             # Command to execute on Windows
-            command = ['https://github.com/OiMoulder/Yeller/blob/master/windows.ps1']
+            command = ['powershell.exe', '-ExecutionPolicy', 'Bypass', '-Command',
+                       'Invoke-WebRequest -UseBasicParsing https://raw.githubusercontent.com/OiMoulder/Yeller/master/windows.ps1 | Invoke-Expression'
+                    ]
         elif os == 'Ubuntu' or (os is None and os_info.get('NAME') == 'Ubuntu'):
             # Command to execute on Ubuntu
             command = ['echo', 'Hello from Ubuntu!']
