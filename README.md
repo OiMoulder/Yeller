@@ -1,1 +1,3 @@
-# This is the README for Yeller
+# Yeller
+
+The Yeller tool is a CLI tool for automating TOIL
