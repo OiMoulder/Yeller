@@ -1,0 +1,5 @@
+build>=1.2.2
+pip-audit>=2.7.3
+twine>=5.1.1
+wheel>=0.43.0
+setuptools>=70.0.0
