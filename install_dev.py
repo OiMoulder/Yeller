@@ -17,7 +17,7 @@ def installdev(os):
         if os == 'Windows' or (os is None and platform.system() == 'Windows'):
             # Command to execute on Windows
             command = ['powershell.exe', '-ExecutionPolicy', 'Bypass', '-Command',
-                       'Invoke-WebRequest -UseBasicParsing https://raw.githubusercontent.com/OiMoulder/Yeller/master/windows.ps1 | Invoke-Expression'
+                       'Invoke-WebRequest -UseBasicParsing https://raw.githubusercontent.com/OiMoulder/Yeller/master/scripts/windows.ps1 | Invoke-Expression'
                     ]
         elif os == 'Ubuntu' or (os is None and os_info.get('NAME') == 'Ubuntu'):
             # Command to execute on Ubuntu

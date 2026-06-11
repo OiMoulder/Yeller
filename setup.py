@@ -33,7 +33,12 @@ setup(
         "Topic :: Utilities"
     ],
     keywords="cli automation devops sre plugin",
-    py_modules=['yeller'],
+    py_modules=[
+        'yeller',
+        'version',
+        'hello',
+        'install_dev',
+    ],
     install_requires=[
         'Click',
     ],
@@ -46,12 +51,9 @@ setup(
         ],
     },
     scripts=[
-        'version.py',
-        'hello.py',
-        'install_dev.py',
-        'windows.ps1',
-        'ubuntu.sh',
-        'redhat.sh',
-        'rocky.sh',
+        'scripts/windows.ps1',
+        'scripts/ubuntu.sh',
+        'scripts/redhat.sh',
+        'scripts/rocky.sh',
     ],
 )
