@@ -25,6 +25,7 @@ setup(
     author="Josh Moulder",
     author_email="josh.moulder12@gmail.com",
     url="https://github.com/oimoulder/yeller",
+    python_requires=">=3.10",
     classifiers=[
         "Development Status :: 1 - Planning",
         "Environment :: Console",
@@ -32,7 +33,12 @@ setup(
         "Intended Audience :: System Administrators",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3 :: Only",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
         "Topic :: Terminals",
         "Topic :: Utilities"
     ],
