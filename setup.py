@@ -5,13 +5,17 @@ Used for installing Yeller via pip.
 
 from setuptools import setup
 
+
 def repo_file_as_string(file_path: str) -> str:
     with open(file_path, "r") as repo_file:
         return repo_file.read()
 
+
 def get_version():
-    from version import yeller_version
-    return yeller_version
+    version_globals = {}
+    with open("version.py", "r") as version_file:
+        exec(version_file.read(), version_globals)
+    return version_globals["yeller_version"]
 
 setup(
     name='yeller',
