@@ -26,12 +26,12 @@ setup(
     author_email="josh.moulder12@gmail.com",
     url="https://github.com/oimoulder/yeller",
     python_requires=">=3.10",
+    license="MIT",
     classifiers=[
         "Development Status :: 1 - Planning",
         "Environment :: Console",
         "Intended Audience :: Developers",
         "Intended Audience :: System Administrators",
-        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3 :: Only",
