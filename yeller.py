@@ -9,6 +9,7 @@ import click
 from version import yeller_version
 from hello import hello  # Import the hello command
 from install_dev import installdev  # Import the installdev command
+from new_tf_project import new_tf_project  # Import the new_tf_project command
 
 # Set context settings for click
 CONTEXT_SETTINGS = {"help_option_names": ["-h", "--help"]}
@@ -28,6 +29,9 @@ cli.add_command(hello)
 
 # Add the installdev command to the main command group
 cli.add_command(installdev)
+
+# Add the new_tf_project command to the main command group
+cli.add_command(new_tf_project)
 
 if __name__ == '__main__':
     cli()

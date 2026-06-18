@@ -49,9 +49,11 @@ setup(
         'version',
         'hello',
         'install_dev',
+        'new_tf_project',
     ],
     install_requires=[
-        'Click',
+        "click>=8.1.8,<9",
+        "jinja2>=3.1.6,<4",
     ],
     package_data={
         '': ['README.md'],
