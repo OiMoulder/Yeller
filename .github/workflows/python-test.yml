@@ -36,3 +36,4 @@ jobs:
         yeller --help
         yeller hello
         yeller hello Josh
+        yeller new_tf_project s3 fake-bucket-name
